@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './App.scss';
+
+import Header from './component/layout/Nav/Nav';
+
+import './sass/App.scss';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>App</h1>
+        <Header />
       </div>
     );
   }
