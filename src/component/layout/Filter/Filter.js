@@ -36,73 +36,73 @@ class Filter extends Component {
 
         <div className="filter filter__price price">
           <p className="filter__label">any price</p>
-          <label htmlFor="priceMin">Min Price</label>
           <input
             type="text"
             name="priceMin"
             id="priceMin"
             className="price__min"
+            placeholder="Min Price"
           />
-          <label htmlFor="priceMax">Max Price</label>
           <input
             type="text"
             name="priceMax"
             id="priceMax"
             className="price__max"
+            placeholder="Max Price"
           />
         </div>
 
         <div className="filter filter__bedrooms bedrooms">
           <p className="filter__label">bedrooms</p>
-          <label htmlFor="bedroomsMin">Min bedrooms</label>
           <input
             type="text"
             name="bedroomsMin"
             id="bedroomsMin"
             className="bedrooms__min"
+            placeholder="Min Bedrooms"
           />
-          <label htmlFor="bedroomsMax">Max bedrooms</label>
           <input
             type="text"
             name="bedroomsMax"
             id="bedroomsMax"
             className="bedrooms__max"
+            placeholder="Max Bedrooms"
           />
         </div>
 
         <div className="filter filter__floorSpace floorSpace">
           <p className="filter__label">floor space</p>
-          <label htmlFor="floorSpaceMin">Min floor Space</label>
           <input
             type="text"
             name="floorSpaceMin"
             id="floorSpaceMin"
             className="floorSpace__min"
+            placeholder="Min Floor Space"
           />
-          <label htmlFor="floorSpaceMax">Max floor Space</label>
           <input
             type="text"
             name="floorSpaceMax"
             id="floorSpaceMax"
             className="floorSpace__max"
+            placeholder="Max Floor Space"
           />
         </div>
 
-        <p className="filter__label">extras</p>
+        <p className="filter__title">extras</p>
 
-        <div>
+        <div className="extra__option extra__option__fireplace">
           <label htmlFor="fireplace">fireplace</label>
 
           <input type="checkbox" name="fireplace" id="fireplace" />
         </div>
 
-        <div>
+        <div className="extra__option extra__option__swimmingPool">
           <label htmlFor="swimmingPool">swimming Pool</label>
 
           <input type="checkbox" name="swimmingPool" id="swimmingPool" />
         </div>
 
-        <div>
+        <div className="extra__option extra__option__basement">
           <label htmlFor="basement">basement</label>
 
           <input type="checkbox" name="basement" id="basement" />
