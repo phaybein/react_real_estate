@@ -8,19 +8,30 @@
   padding: 1rem 0;
   text-transform: capitalize;
 
-  display: flex;
-  align-items: center;
-
   &__container {
     display: flex;
-    width: 100%;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
   }
 
   &__logo {
-    margin-right: auto;
+    padding: 0.5rem 1rem;
+
+    @include tablet {
+      margin-right: auto;
+    }
   }
 
   &__links {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+      flex-direction: row;
+    }
     .nav__link {
       color: $white;
       text-decoration: none;
@@ -36,7 +47,11 @@
       background: $secondary;
       border-radius: 2px;
       color: $white;
-      padding: 7px 30px;
+      padding: 0.5rem 1rem;
+
+      @include tablet {
+        padding: 0.5rem 2rem;
+      }
     }
   }
 }

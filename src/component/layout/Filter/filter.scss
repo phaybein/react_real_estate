@@ -1,1 +1,22 @@
 @import '../../../sass/App.scss';
+
+.filters {
+  background: $sidebar;
+  color: $text;
+
+  .filter {
+    background: transparent;
+    color: $text;
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.7rem;
+    text-transform: capitalize;
+
+    &__title {
+      color: $titleText;
+      text-transform: uppercase;
+    }
+  }
+}
