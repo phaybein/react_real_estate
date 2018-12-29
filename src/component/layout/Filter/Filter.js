@@ -7,7 +7,10 @@ class Filter extends Component {
       <div className="filters">
         <h4 className="filter__title">Filter</h4>
 
-        <select id="filter__listingType" className="filter filter__listingType">
+        <select
+          id="filter__listingType"
+          className="filter__select filter__listingType"
+        >
           <option value="select" selected>
             listing type
           </option>
@@ -18,7 +21,10 @@ class Filter extends Component {
 
           <option value="potentialListing">potential Listing</option>
         </select>
-        <select id="filter__homeType" className="filter filter__homeType">
+        <select
+          id="filter__homeType"
+          className="filter__select filter__homeType"
+        >
           <option value="select" selected>
             home type
           </option>

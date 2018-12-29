@@ -9,20 +9,21 @@ class Listings extends Component {
           <input type="text" name="search" id="search" />
         </section>
 
-        <section className="listings__sort sort" />
-        <div className="sort__results">281 results found</div>
+        <section className="listings__sort sort">
+          <div className="sort__results">281 results found</div>
 
-        <div className="sort__options">
-          <select name="sortBy" id="sort">
-            <option value="priceAsc">High to Low</option>
-            <option value="priceDesc">Low to High</option>
-          </select>
+          <div className="sort__options">
+            <select name="sortBy" id="sort">
+              <option value="priceAsc">High to Low</option>
+              <option value="priceDesc">Low to High</option>
+            </select>
 
-          <div className="sort__view">
-            <i className="fas fa-list" />
-            <i className="fas fa-th" />
+            <div className="sort__view">
+              <i className="fas fa-list" />
+              <i className="fas fa-th" />
+            </div>
           </div>
-        </div>
+        </section>
         <section className="listings__results">
           <div className="listing">
             <div className="listing__image">

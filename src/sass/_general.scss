@@ -7,3 +7,22 @@
     flex-direction: row;
   }
 }
+
+input[type='text'] {
+  border-radius: $border-radius;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  padding: 0.7rem;
+  width: 100%;
+}
+
+select {
+  background: transparent;
+  color: $gray;
+  display: block;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding: 0.7rem;
+  text-transform: capitalize;
+  width: 100%;
+}

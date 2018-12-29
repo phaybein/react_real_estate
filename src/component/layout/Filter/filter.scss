@@ -2,25 +2,21 @@
 
 .filters {
   background: $sidebar;
-  color: $text;
-  padding: 0 1rem;
+  color: $gray;
+  padding: 1rem;
 
   @include tablet {
+    padding-bottom: 0;
     width: 30vw;
     max-width: 500px;
   }
 
   .filter {
-    background: transparent;
-    color: $text;
+    color: $gray;
     display: block;
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 2rem;
-    padding: 0.7rem;
     text-transform: capitalize;
-    width: 100%;
-
     &__title {
       color: $titleText;
       margin-bottom: 2rem;
@@ -32,10 +28,6 @@
     }
 
     input[type='text'] {
-      border-radius: $border-radius;
-      font-size: 0.8rem;
-      margin-right: 0.5rem;
-      padding: 0.7rem;
       width: 45%;
     }
 
@@ -53,9 +45,5 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    input[type='checkbox'] {
-      padding: 0.5rem;
-    }
   }
 }
