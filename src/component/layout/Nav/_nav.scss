@@ -36,11 +36,6 @@
       color: $white;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      transition: $transition;
-
-      &:hover {
-        color: $secondary;
-      }
     }
 
     .btn--primary {

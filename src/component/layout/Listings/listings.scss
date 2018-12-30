@@ -14,7 +14,6 @@
     input[type='text'] {
       border: none;
       border-bottom: 1px solid $light-gray;
-      color: $light-gray;
       font-size: 1.5rem;
     }
   }
@@ -73,6 +72,7 @@
       box-shadow: $box-shadow;
       color: #fff;
       margin-bottom: 1.5rem;
+      max-width: 288px;
 
       @include tablet {
         margin: 1.5rem;
@@ -81,8 +81,21 @@
         background: url('https://cdn.onekindesign.com/wp-content/uploads/2017/05/Mountain-Modern-Home-Ryan-Group-Architects-02-1-Kindesign.jpg')
           no-repeat center/cover;
         min-height: 165px;
-        padding: 0.7rem 1rem;
+        padding: 0.8rem;
         position: relative;
+
+        &:hover {
+          .listing__details {
+            opacity: 1;
+          }
+        }
+
+        .listing__name {
+          font-weight: bold;
+          z-index: 1;
+          position: absolute;
+          bottom: 10px;
+        }
 
         .listing__details {
           background: linear-gradient(
@@ -90,21 +103,100 @@
             rgba(75, 51, 173, 0.9135855025603992) 10%,
             rgba(185, 103, 196, 0.9247899843531162) 90%
           );
+          opacity: 0;
+          padding: 0.8rem;
+          transition: $transition;
           position: absolute;
           top: 0;
           bottom: 0;
           left: 0;
           right: 0;
+
+          .detail__user {
+            display: flex;
+            margin-bottom: 0.5rem;
+
+            .avatar__small {
+              background: url('https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg')
+                no-repeat center/cover;
+              border: 3px solid #fff;
+              border-radius: 50%;
+              height: 50px;
+              margin-right: 1rem;
+              width: 50px;
+            }
+
+            .user__info {
+              font-size: 1rem;
+              margin-bottom: 1rem;
+              text-transform: capitalize;
+
+              @include tablet {
+                margin-bottom: 0;
+              }
+              .user__name {
+                font-weight: bold;
+                margin-bottom: 0.3rem;
+              }
+
+              .date__posted {
+                color: $light-gray;
+
+                @include smLaptop {
+                  font-size: 0.7rem;
+                }
+              }
+            }
+          }
+          .detail__info {
+            font-size: 0.8rem;
+            margin: 0 auto;
+            width: 80%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 0.4rem;
+
+            @include smLaptop {
+              font-size: 0.7rem;
+            }
+
+            @include laptop {
+              font-size: 0.6rem;
+            }
+
+            .detail__floor-space {
+              justify-self: start;
+            }
+
+            .detail__furnished {
+              justify-self: end;
+            }
+
+            .detail__bedrooms {
+              justify-self: start;
+            }
+            .detail__map {
+              color: #fff;
+              justify-self: end;
+            }
+          }
         }
       }
 
-      &__price {
-        color: $gray;
-      }
+      &__body {
+        padding: 1rem;
+        .body__price {
+          color: $dark-gray;
+          margin-bottom: 0.8rem;
+        }
 
-      &__location {
-        color: $gray;
+        .body__location {
+          color: $light-gray;
+        }
       }
     }
+  }
+
+  &__pagination {
   }
 }

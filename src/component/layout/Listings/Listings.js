@@ -24,6 +24,7 @@ class Listings extends Component {
             </div>
           </div>
         </section>
+
         <section className="listings__results">
           <div className="listing">
             <div className="listing__image">
@@ -33,7 +34,7 @@ class Listings extends Component {
                   <div className="avatar__small" />
                   <div className="user__info">
                     <div className="user__name">nina smith</div>
-                    <div className="date__posted">05/05/2018</div>
+                    <div className="date__posted">posted on 05/05/2018</div>
                   </div>
                 </div>
                 <div className="detail__info">
@@ -52,9 +53,11 @@ class Listings extends Component {
                 </div>
               </div>
             </div>
-            <div className="listing__price">$1500</div>
-            <div className="listing__location">
-              <i className="fas fa-map-marker-alt" /> San Diego, CA
+            <div className="listing__body">
+              <div className="body__price">$1500 / month</div>
+              <div className="body__location">
+                <i className="fas fa-map-marker-alt" /> San Diego, CA
+              </div>
             </div>
           </div>
         </section>
@@ -62,7 +65,7 @@ class Listings extends Component {
         <section className="listings__pagination">
           <ul className="pagination">
             <li>Prev</li>
-            <li>1</li>
+            <li className="active">1</li>
             <li>2</li>
             <li>3</li>
             <li>4</li>
