@@ -11,9 +11,7 @@ class Filter extends Component {
           id="filter__listingType"
           className="filter__select filter__listingType"
         >
-          <option value="select" selected>
-            listing type
-          </option>
+          <option defaultValue="select">listing type</option>
 
           <option value="forSale">for Sale</option>
 
@@ -25,9 +23,7 @@ class Filter extends Component {
           id="filter__homeType"
           className="filter__select filter__homeType"
         >
-          <option value="select" selected>
-            home type
-          </option>
+          <option defaultValue="select">home type</option>
 
           <option value="houses">Houses</option>
 
