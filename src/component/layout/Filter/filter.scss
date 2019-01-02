@@ -11,6 +11,15 @@
     max-width: 500px;
   }
 
+  .filter__label {
+    color: #a7a3a4;
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+  }
+
   .filter {
     color: $gray;
     display: block;
@@ -21,10 +30,6 @@
       color: $titleText;
       margin-bottom: 2rem;
       text-transform: uppercase;
-    }
-
-    .filter__label {
-      margin-bottom: 0.5rem;
     }
 
     input[type='text'] {

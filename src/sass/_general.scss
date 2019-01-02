@@ -67,6 +67,9 @@ a {
 }
 
 input[type='text'] {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-bottom: 1px solid $light-gray;
   border-radius: $border-radius;
   color: $dark-gray;
   font-size: 0.8rem;

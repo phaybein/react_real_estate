@@ -17,6 +17,12 @@
   }
 }
 
+@mixin lgLaptop {
+  @media screen and (min-width: #{$lgLaptop}) {
+    @content;
+  }
+}
+
 @mixin desktop {
   @media screen and (min-width: #{$desktop}) {
     @content;

@@ -5,6 +5,10 @@ class Listings extends Component {
   loopListing() {
     const { ListingsData } = this.props;
 
+    if (ListingsData === undefined || ListingsData.length === 0) {
+      return 'Sorry, your filter did not match any listing';
+    }
+
     return ListingsData.map((listing, index) => {
       return (
         <div className="listing" key={index}>
