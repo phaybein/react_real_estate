@@ -2,6 +2,37 @@ import React, { Component } from 'react';
 import './filter.scss';
 
 class Filter extends Component {
+  constructor(props) {
+    super(props);
+    this.props.populateAction();
+  }
+
+  listingType = () => {
+    const { listingTypes } = this.props.globalState.populateFormsData;
+    if (listingTypes !== undefined) {
+      return listingTypes.map(item => {
+        return (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        );
+      });
+    }
+  };
+
+  homeType = () => {
+    const { homeTypes } = this.props.globalState.populateFormsData;
+    if (homeTypes !== undefined) {
+      return homeTypes.map(item => {
+        return (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        );
+      });
+    }
+  };
+
   render() {
     return (
       <div className="filters">
@@ -20,11 +51,7 @@ class Filter extends Component {
 
           <option value="all">All</option>
 
-          <option value="forSale">for Sale</option>
-
-          <option value="forRent">for Rent</option>
-
-          <option value="potentialListing">potential Listing</option>
+          {this.listingType()}
         </select>
 
         <p className="filter__label" htmlFor="homeType">
@@ -40,15 +67,7 @@ class Filter extends Component {
 
           <option value="all">All</option>
 
-          <option value="house">Houses</option>
-
-          <option value="apartment">Apartments</option>
-
-          <option value="condo">condos</option>
-
-          <option value="townhome">townhomes</option>
-
-          <option value="manufactured">Manufactured</option>
+          {this.homeType()}
         </select>
 
         <div className="filter filter__price price">
