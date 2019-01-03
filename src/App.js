@@ -24,9 +24,17 @@ class App extends Component {
       filterData: ListingsData,
       populateFormsData: ''
     };
-
-    // this.populateForms = this.populateForms.bind(this);
   }
+
+  componentWillMount = () => {
+    const ListingsData = this.state.ListingsData.sort((a, b) => {
+      return a.price - b.price;
+    });
+
+    this.setState({
+      ListingsData
+    });
+  };
 
   // Grab updated values from filter when changed
   filterChange = e => {
@@ -98,6 +106,9 @@ class App extends Component {
     // Transform into an array
     listingTypes = [...listingTypes];
 
+    // Sort A-Z
+    listingTypes = listingTypes.sort();
+
     // HOME TYPE
     let homeTypes = ListingsData.map(item => {
       return item.homeType;
@@ -108,6 +119,9 @@ class App extends Component {
 
     // Transform into an array
     homeTypes = [...homeTypes];
+
+    // Sort A-Z
+    homeTypes = homeTypes.sort();
 
     this.setState({
       populateFormsData: {
