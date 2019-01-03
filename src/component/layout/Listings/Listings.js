@@ -66,9 +66,9 @@ class Listings extends Component {
           <div className="sort__results">281 results found</div>
 
           <div className="sort__options">
-            <select name="sortBy" id="sort">
-              <option value="priceAsc">High to Low</option>
+            <select name="sortBy" id="sort" onChange={this.props.filterChange}>
               <option value="priceDesc">Low to High</option>
+              <option value="priceAsc">High to Low</option>
             </select>
 
             <div className="sort__view">

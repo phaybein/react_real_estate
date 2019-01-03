@@ -22,7 +22,8 @@ class App extends Component {
       priceMin: 0,
       priceMax: 1000000000,
       filterData: ListingsData,
-      populateFormsData: ''
+      populateFormsData: '',
+      sortBy: 'priceDesc'
     };
   }
 
@@ -87,6 +88,18 @@ class App extends Component {
       });
     }
 
+    if (this.state.sortBy === 'priceDesc') {
+      newData = newData.sort((a, b) => {
+        return a.price - b.price;
+      });
+    }
+
+    if (this.state.sortBy === 'priceAsc') {
+      newData = newData.sort((a, b) => {
+        return b.price - a.price;
+      });
+    }
+
     this.setState({
       filterData: newData
     });
@@ -123,12 +136,17 @@ class App extends Component {
     // Sort A-Z
     homeTypes = homeTypes.sort();
 
-    this.setState({
-      populateFormsData: {
-        listingTypes,
-        homeTypes
+    this.setState(
+      {
+        populateFormsData: {
+          listingTypes,
+          homeTypes
+        }
+      },
+      () => {
+        console.log(this.state);
       }
-    });
+    );
   };
 
   render() {
@@ -141,7 +159,10 @@ class App extends Component {
             globalState={this.state}
             populateAction={this.populateForms}
           />
-          <Listings ListingsData={this.state.filterData} />
+          <Listings
+            ListingsData={this.state.filterData}
+            filterChange={this.filterChange}
+          />
         </section>
       </div>
     );
