@@ -24,7 +24,8 @@ class App extends Component {
       filterData: ListingsData,
       populateFormsData: '',
       sortBy: 'priceDesc',
-      view: 'grid'
+      view: 'grid',
+      search: ''
     };
   }
 
@@ -49,6 +50,7 @@ class App extends Component {
         [filterName]: filterValue
       },
       () => {
+        console.log(this.state.search);
         this.filterData();
       }
     );
@@ -104,6 +106,20 @@ class App extends Component {
     if (this.state.sortBy === 'priceAsc') {
       newData = newData.sort((a, b) => {
         return b.price - a.price;
+      });
+    }
+
+    if (this.state.search !== '') {
+      newData = newData.filter(listing => {
+        let locationCity = listing.locationCity.toLowerCase();
+        let searchText = this.state.search.toLowerCase();
+        let n = locationCity.match(searchText);
+
+        // if (n !== null) {
+        //   return true;
+        // }
+
+        return n !== null ? true : false;
       });
     }
 

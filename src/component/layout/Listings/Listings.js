@@ -47,7 +47,8 @@ class Listings extends Component {
           <div className="listing__body">
             <div className="body__price">${listing.price} / month</div>
             <div className="body__location">
-              <i className="fas fa-map-marker-alt" /> {listing.location}
+              <i className="fas fa-map-marker-alt" /> {listing.locationCity},{' '}
+              {listing.locationState}
             </div>
           </div>
         </div>
@@ -60,7 +61,12 @@ class Listings extends Component {
     return (
       <section className="listings">
         <section className="listings__search">
-          <input type="text" name="search" id="search" />
+          <input
+            type="text"
+            name="search"
+            id="search"
+            onChange={this.props.filterChange}
+          />
         </section>
         <section className="listings__sort sort">
           <div className="sort__results">281 results found</div>
