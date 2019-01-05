@@ -66,6 +66,7 @@ class Listings extends Component {
             name="search"
             id="search"
             onChange={this.props.filterChange}
+            placeholder="Enter the name of a city..."
           />
         </section>
         <section className="listings__sort sort">
@@ -89,8 +90,6 @@ class Listings extends Component {
             </div>
           </div>
         </section>
-
-        {/* <section className="listings__results">{this.loopListing()}</section> */}
 
         {layoutView ? (
           <section className="listings__results--grid">

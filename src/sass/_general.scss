@@ -76,6 +76,10 @@ input[type='text'] {
   margin-right: 0.5rem;
   padding: 0.7rem;
   width: 100%;
+
+  &::placeholder {
+    color: lighten($light-gray, 15);
+  }
 }
 
 select {

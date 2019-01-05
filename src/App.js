@@ -115,10 +115,6 @@ class App extends Component {
         let searchText = this.state.search.toLowerCase();
         let n = locationCity.match(searchText);
 
-        // if (n !== null) {
-        //   return true;
-        // }
-
         return n !== null ? true : false;
       });
     }
