@@ -56,12 +56,12 @@ class Listings extends Component {
   }
 
   render() {
+    const layoutView = this.props.globalState.view === 'grid' ? true : false;
     return (
       <section className="listings">
         <section className="listings__search">
           <input type="text" name="search" id="search" />
         </section>
-
         <section className="listings__sort sort">
           <div className="sort__results">281 results found</div>
 
@@ -72,13 +72,29 @@ class Listings extends Component {
             </select>
 
             <div className="sort__view">
-              <i className="fas fa-list" />
-              <i className="fas fa-th" />
+              <i
+                className="fas fa-list"
+                onClick={this.props.changeView.bind(null, 'row')}
+              />
+              <i
+                className="fas fa-th"
+                onClick={this.props.changeView.bind(null, 'grid')}
+              />
             </div>
           </div>
         </section>
 
-        <section className="listings__results">{this.loopListing()}</section>
+        {/* <section className="listings__results">{this.loopListing()}</section> */}
+
+        {layoutView ? (
+          <section className="listings__results--grid">
+            {this.loopListing()}
+          </section>
+        ) : (
+          <section className="listings__results--row">
+            {this.loopListing()}
+          </section>
+        )}
 
         <section className="listings__pagination">
           <ul className="pagination">

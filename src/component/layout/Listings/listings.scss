@@ -63,160 +63,311 @@
   }
 
   &__results {
-    margin-bottom: 3rem;
+    &--grid {
+      margin-bottom: 3rem;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    grid-gap: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-gap: 1rem;
 
-    @include laptop {
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    }
+      @include laptop {
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      }
 
-    @include desktop {
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    }
+      @include desktop {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      }
 
-    .listing {
-      border-radius: $border-radius;
-      box-shadow: $box-shadow;
-      color: #fff;
+      .listing {
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        color: #fff;
 
-      &__image {
-        background: url('https://cdn.onekindesign.com/wp-content/uploads/2017/05/Mountain-Modern-Home-Ryan-Group-Architects-02-1-Kindesign.jpg')
-          no-repeat center/cover;
-        min-height: 165px;
-        padding: 0.8rem;
-        position: relative;
-
-        &:hover {
-          .listing__details {
-            opacity: 1;
-          }
-        }
-
-        .listing__name {
-          font-weight: bold;
-          z-index: 1;
-          position: absolute;
-          bottom: 10px;
-
-          @include smLaptop {
-            font-size: 0.8rem;
-          }
-        }
-
-        .listing__details {
-          background: linear-gradient(
-            156deg,
-            rgba(75, 51, 173, 0.9135855025603992) 10%,
-            rgba(185, 103, 196, 0.9247899843531162) 90%
-          );
-          opacity: 0;
+        &__image {
+          background: url('https://cdn.onekindesign.com/wp-content/uploads/2017/05/Mountain-Modern-Home-Ryan-Group-Architects-02-1-Kindesign.jpg')
+            no-repeat center/cover;
+          min-height: 165px;
           padding: 0.8rem;
-          transition: $transition;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
+          position: relative;
 
-          .detail__user {
-            display: flex;
-            margin-bottom: 0.5rem;
-
-            .avatar__small {
-              background: url('https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg')
-                no-repeat center/cover;
-              border: 3px solid #fff;
-              border-radius: 50%;
-              height: 50px;
-              margin-right: 1rem;
-              width: 50px;
-            }
-
-            .user__info {
-              font-size: 1rem;
-              margin-bottom: 1rem;
-              text-transform: capitalize;
-
-              @include tablet {
-                margin-bottom: 0;
-              }
-              .user__name {
-                font-weight: bold;
-                margin-bottom: 0.3rem;
-
-                @include laptop {
-                  font-size: 0.8rem;
-                }
-              }
-
-              .date__posted {
-                color: $light-gray;
-
-                @include smLaptop {
-                  font-size: 0.7rem;
-                }
-                @include laptop {
-                  font-size: 0.5rem;
-                }
-              }
+          &:hover {
+            .listing__details {
+              opacity: 1;
             }
           }
-          .detail__info {
-            font-size: 0.8rem;
-            margin: 0 auto;
-            width: 80%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 0.4rem;
+
+          .listing__name {
+            font-weight: bold;
+            z-index: 1;
+            position: absolute;
+            bottom: 10px;
 
             @include smLaptop {
-              font-size: 0.7rem;
+              font-size: 0.8rem;
             }
+          }
 
-            @include laptop {
-              font-size: 0.7rem;
-            }
+          .listing__details {
+            background: linear-gradient(
+              156deg,
+              rgba(75, 51, 173, 0.9135855025603992) 10%,
+              rgba(185, 103, 196, 0.9247899843531162) 90%
+            );
+            opacity: 0;
+            padding: 0.8rem;
+            transition: $transition;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
 
-            @include lgLaptop {
-              font-size: 0.49rem;
-            }
+            .detail__user {
+              display: flex;
+              margin-bottom: 0.5rem;
 
-            .detail__floor-space {
-              justify-self: start;
-            }
+              .avatar__small {
+                background: url('https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg')
+                  no-repeat center/cover;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                height: 50px;
+                margin-right: 1rem;
+                width: 50px;
+              }
 
-            .detail__furnished {
-              justify-self: end;
-            }
+              .user__info {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                text-transform: capitalize;
 
-            .detail__bedrooms {
-              justify-self: start;
+                @include tablet {
+                  margin-bottom: 0;
+                }
+                .user__name {
+                  font-weight: bold;
+                  margin-bottom: 0.3rem;
+
+                  @include laptop {
+                    font-size: 0.8rem;
+                  }
+                }
+
+                .date__posted {
+                  color: $light-gray;
+
+                  @include smLaptop {
+                    font-size: 0.7rem;
+                  }
+                  @include laptop {
+                    font-size: 0.5rem;
+                  }
+                }
+              }
             }
-            .detail__map {
-              color: #fff;
-              justify-self: end;
+            .detail__info {
+              font-size: 0.8rem;
+              margin: 0 auto;
+              width: 80%;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-gap: 0.4rem;
+
+              @include smLaptop {
+                font-size: 0.7rem;
+              }
+
+              @include laptop {
+                font-size: 0.7rem;
+              }
+
+              @include lgLaptop {
+                font-size: 0.49rem;
+              }
+
+              .detail__floor-space {
+                justify-self: start;
+              }
+
+              .detail__furnished {
+                justify-self: end;
+              }
+
+              .detail__bedrooms {
+                justify-self: start;
+              }
+              .detail__map {
+                color: #fff;
+                justify-self: end;
+              }
             }
           }
         }
-      }
 
-      &__body {
-        padding: 1rem;
-        .body__price {
-          color: $dark-gray;
-          margin-bottom: 0.8rem;
-        }
+        &__body {
+          padding: 1rem;
+          .body__price {
+            color: $dark-gray;
+            margin-bottom: 0.8rem;
+          }
 
-        .body__location {
-          color: $light-gray;
+          .body__location {
+            color: $light-gray;
+          }
         }
       }
     }
-  }
+    &--row {
+      margin-bottom: 3rem;
 
-  &__pagination {
+      .listing {
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        color: #fff;
+        margin-bottom: 2rem;
+
+        display: flex;
+
+        &__image {
+          background: url('https://cdn.onekindesign.com/wp-content/uploads/2017/05/Mountain-Modern-Home-Ryan-Group-Architects-02-1-Kindesign.jpg')
+            no-repeat center/cover;
+          flex-basis: 70%;
+          flex-grow: 1;
+          min-height: 165px;
+          padding: 0.8rem;
+          position: relative;
+
+          @include tablet {
+            flex-basis: 60%;
+          }
+
+          &:hover {
+            .listing__details {
+              opacity: 1;
+            }
+          }
+
+          .listing__name {
+            font-weight: bold;
+            z-index: 1;
+            position: absolute;
+            bottom: 10px;
+
+            @include smLaptop {
+              font-size: 0.8rem;
+            }
+          }
+
+          .listing__details {
+            background: linear-gradient(
+              156deg,
+              rgba(75, 51, 173, 0.9135855025603992) 10%,
+              rgba(185, 103, 196, 0.9247899843531162) 90%
+            );
+            opacity: 0;
+            padding: 0.8rem;
+            transition: $transition;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            .detail__user {
+              display: flex;
+              margin-bottom: 0.5rem;
+
+              .avatar__small {
+                background: url('https://s3.amazonaws.com/uifaces/faces/twitter/jina/128.jpg')
+                  no-repeat center/cover;
+                border: 3px solid #fff;
+                border-radius: 50%;
+                height: 50px;
+                margin-right: 1rem;
+                width: 50px;
+              }
+
+              .user__info {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+                text-transform: capitalize;
+
+                @include tablet {
+                  margin-bottom: 0;
+                }
+                .user__name {
+                  font-weight: bold;
+                  margin-bottom: 0.3rem;
+
+                  @include laptop {
+                    font-size: 0.8rem;
+                  }
+                }
+
+                .date__posted {
+                  color: $light-gray;
+
+                  @include smLaptop {
+                    font-size: 0.7rem;
+                  }
+                  @include laptop {
+                    font-size: 0.5rem;
+                  }
+                }
+              }
+            }
+            .detail__info {
+              font-size: 0.8rem;
+              margin: 0 auto;
+              width: 80%;
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              grid-gap: 0.4rem;
+
+              @include smLaptop {
+                font-size: 0.7rem;
+              }
+
+              @include laptop {
+                font-size: 0.7rem;
+              }
+
+              @include lgLaptop {
+                font-size: 0.49rem;
+              }
+
+              .detail__floor-space {
+                justify-self: start;
+              }
+
+              .detail__furnished {
+                justify-self: end;
+              }
+
+              .detail__bedrooms {
+                justify-self: start;
+              }
+              .detail__map {
+                color: #fff;
+                justify-self: end;
+              }
+            }
+          }
+        }
+
+        &__body {
+          flex-grow: 9999;
+          padding: 1rem;
+          .body__price {
+            color: $dark-gray;
+            margin-bottom: 0.8rem;
+          }
+
+          .body__location {
+            color: $light-gray;
+          }
+        }
+      }
+    }
   }
 }

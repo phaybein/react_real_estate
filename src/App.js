@@ -23,7 +23,8 @@ class App extends Component {
       priceMax: 1000000000,
       filterData: ListingsData,
       populateFormsData: '',
-      sortBy: 'priceDesc'
+      sortBy: 'priceDesc',
+      view: 'grid'
     };
   }
 
@@ -51,6 +52,12 @@ class App extends Component {
         this.filterData();
       }
     );
+  };
+
+  changeView = viewName => {
+    this.setState({
+      view: viewName
+    });
   };
 
   // Filter through data depending on user selection
@@ -160,8 +167,10 @@ class App extends Component {
             populateAction={this.populateForms}
           />
           <Listings
-            ListingsData={this.state.filterData}
             filterChange={this.filterChange}
+            globalState={this.state}
+            ListingsData={this.state.filterData}
+            changeView={this.changeView}
           />
         </section>
       </div>
